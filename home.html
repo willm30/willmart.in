@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=0"/>
+    <meta property="og:site_name" content="William Martin" />
+    <meta property="og:title" content="William Martin: Writing, Design, Web Development"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="/hiBitmoji flipped.png"/>
+    <meta property="og:url" content="https://willmart.in"/>
+    <meta property="og:description" content="A blog in which I document my progress toward reaching my goals and discuss topics of interest">
+    <meta name="description" content="A blog in which I document my progress toward reaching my goals and discuss topics of interest">
+    <meta name="author" content="William Martin">
+    <meta name="keywords" content="William Martin, Writing, Web Design, Web Development, HTML, HTML5, CSS, CSS3, JavaScript, FreeCodeCamp, Free Code Camp, Freecodecamp.org">
+    <title>William Martin</title>
+    <link rel="stylesheet" type="text/css" href="indexStyle.css" media="screen" />
+    <link rel="shortcut icon" href="/hiBitmoji flipped.png" type="image/x-icon">
+</head>
+  <body>
+    <div id="root">
+      <div class="cloud" id="cloud1"></div>
+      <div class="cloud" id="cloud2"></div>
+      <div class="cloud" id="cloud3"></div>
+      <div id="hiBitmoji">
+        <img src="hiBitmoji flipped.png" alt="My Bitmoji Waving" width="300" height="300">
+      </div>
+    <div id="navbar">
+        <ul>
+          <li class="navItem">
+           <a href="index.html">willmart.in</a> 
+          </li>
+          <li class="navItem">
+            <a href="index.html">Writing</a> 
+          </li>
+          <li class="navItem">
+            <a href="index.html">Contact</a> 
+          </li>
+        </ul>
+    </div>
+    <div id="hero">
+        <div id="titleContainer">  
+      <h1 id="heroTitle"><span id="IamA">I am a</span><span id="jobTitle">Writer</span></h1>
+        </div>
+        <div id="strapline">
+          <h2>My Projects Stack:</h2>
+          <ul id="listContainer">
+            <li id="project1" class="preclick" onclick="listAnimation1()" ontouchstart="touchDevices()">
+              <div id="project1Title">
+                Build My Own Website
+              </div>
+              <div class="hiddenText" id="paraContainer">
+                <p>I'd wanted to create my own website for a while. Ironically, I had no extrinsic reason to—I just fancied it. To get started, I completed the first three modules on FreeCodeCamp: "Responsive Web Design", "JavaScript Algorithms and Data Structures", and "Front End Development Libraries". This took me about 150 hours (far below the advertised 900). I then read the first 14 chapters of Marijn Haverbeke's "Eloquent Javascript". It progressively appeared to become less and less relevant to my specific objective of building this website, and while a thorough grounding in Javascript fundamentals, beyond my needs. I therefore abandoned it, and any further focused study, in favour of a hands-on approach to learning.</p><br>
+                <p>I eschewed using a CMS such as Wordpress, something I expect I'll eventually have to rectify, for one reason: I wanted to do everything myself, and have the ability for total customisation without paying for the privilege. As is becoming clear with just three unique web pages, it becomes difficult to manage code and content without a dedicated system in place. Currently, I'm simply duplicating my HTML files for every new page I wish to create, which is problematic, at least because if I change code relating to the structure of the site, I have to manually update every page it affects—and thus mistakes are likely.</p><br>
+                <p>It took about 10 hours to design and code my minimum viable product. My site currently has two styles, one for the Home Page, and one for articles such as this. Every page has a Nav Bar, a Title, and some Content—these constitute the main components of every page. I kept the styling simple, going for a comic book vibe because it's playful, easy, and I'm not yet at the stage where I can design something in XD and translate it into functioning code. I did, however, splash out on the animated title. I wrote a simple JavaScript function that loops through an array every 2 seconds and returns a different title by which I aspire to be professionally identified. I also had to ensure the site was responsive to different screen sizes, and wrote a couple of media queries for smaller screens (which I'm yet to actually test on mobile!). As a finishing touch, I animated the hover selectors on the Home Page links and the Nav Bar so they transition instead of flashing. Much sexier.</p><br>
+                <p>And that's pretty much it. It was a fun project. I learned enough HTML, CSS, and JS to build what you see before you. I think part of my motivation in creating the site was to have a place for publishing content online that felt unique. If this is the metric by which to measure my progress, then my work here is done. I'll continue to iterate in the meantime.</p><br>
+                <p>Post-script: The information contained in "Eloquent Javascript" has since become more relevant as a result of the animations I've created for my main list elements. This added about 15 additional hours onto the project time.</p><br>
+                <p>Post-post-script: After completing the first MVP of the site for desktop, I re-wrote much of the code to make it responsive, so that it would work on mobile. All in all, I have logged 42 hours of work on the website.</p>
+                <div id="minimiserCont">
+                <button class="minButton preclick" id="minimiser" onclick="listAnimation1()">Minimise</button>
+                </div>
+              </div>
+            </li>
+            <li id="project2" class="preclick" onclick="listAnimation2()" ontouchstart="touchDevices()">
+              <div id="project2Title">
+                Acquire Spanish to C2
+              </div>
+              <div class="hiddenText" id="paraContainer2">
+                <p>
+                  This is a work in progress. I am currently at about a B2 level, and consume about 3-4 hours a day of Spanish content. I am aiming to get to a level C2 standard by the end of 2021. I started learning in earnest after many failed years at school at the start of the pandemic in March 2020. In March 2021, I discovered Matt vs Japan's Refold method, which is an intensively immersive approach to learning. I had been immersing already, but not with the focus or structure provided by the <a href="https://refold.la">Refold</a> site. 
+                  </p>
+                <div id="minimiserCont2">
+                <button class="minButton preclick" id="minimiser2" onclick="listAnimation2()">Minimise</button>
+                </div>
+              </div>
+
+            </li>
+            <li id="analytics">
+              <p id="screenWidth">Hi</p> 
+            </li>
+          </ul>
+          <h3 id="viewCompleted"><a href="">View Completed Projects</a></h3>
+        </div>
+      </div> 
+    </div> 
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>

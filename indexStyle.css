@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:wght@300;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    font-family: "Abel", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    background-color: rgb(114, 200, 250);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#hiBitmoji {
+    position: fixed;
+    bottom: -5px;
+}
+
+#hiBitmoji img {
+    width: 120%;
+    height: 120%;
+    
+}
+
+.cloud {
+    z-index: -10;
+    position: absolute;
+    width: 390px;
+    height: 180px;
+    border-radius: 100px;
+    box-shadow: 10px 10px rgba(0,0,0,0.25);
+    background-color: white;
+}
+
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+
+.cloud::after {
+    width: 190px;
+    height: 190px;
+    left: 10px;
+    top: -80px;
+}
+
+.cloud::before{
+    width: 130px;
+    height: 130px;
+    left: 60px;
+    top: -100px;
+}
+
+#cloud1{
+    left: 150px;
+    top: 300px;
+}
+#cloud2{
+    left: 1250px;
+    top: 120px;
+}
+#cloud3{
+    left: 1750px;
+    top: 225px;
+    transform: scaleX(-1)
+}
+#root {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%; 
+    overflow-x: hidden; 
+}
+
+#navbar {
+    display: none;
+    z-index: 9;
+    order: 1;
+    width: 15%;
+}
+
+
+#navbar ul {
+    width: 100%;
+    height: 100%;
+}
+
+.navItem {
+    margin: 40px 0px;
+    width: 100%;
+    padding: 0px 20px;
+    border: 1px solid black;
+    background-color: blanchedalmond;
+    box-shadow: -5px 5px black;
+    font-size: 3vw;
+    min-width: 250px;
+}
+
+.navItem:hover, #viewCompleted:hover{
+    animation-name: textTransition;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+#hero {
+    order: 0;
+    width: 85%;
+    height: 100%;
+
+}
+#titleContainer { 
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+#titleContainer h1{ 
+    border: 1px solid black;
+    background-color: salmon;
+    width: 680px;
+    margin: auto;
+    box-shadow: 5px 5px black;
+    font-size: 6em;
+    padding: 0px 25px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#jobTitle{
+    display: inline-block;
+    width: fit-content; 
+    margin-left: 20px;
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#IamA {
+    margin-right: 10px;
+    text-shadow: 1px 1px white;
+}
+
+#strapline {
+    position: absolute;
+    top: 400px;
+    width: 100%;
+    color: black;
+}
+
+#strapline h2 {
+    background-color:salmon;
+    text-align: center;
+    border: 1px solid black;
+    margin: auto;
+    width: fit-content;
+    padding: 0px 10px;
+    box-shadow: 5px 5px black;
+    font-size: 3em;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#strapline h3 {
+    display: none;
+    background-color: blanchedalmond;
+    text-align: center;
+    border: 1px solid black;
+    margin: 20px auto 0px;
+    width: fit-content;
+    box-shadow: 5px 5px black;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+#strapline ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto;
+    overflow: hidden;
+    width: 80%
+}
+
+#strapline li {
+    border: 1px solid black;
+    width: 352.95px;
+    height: 90px;
+    margin: 10px auto;
+    background-color: whitesmoke;
+    overflow: hidden;
+    font-size: 2.3em;
+}
+
+.preclick:hover {
+    animation-name: textTransition2;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+#hero article {
+    position: absolute; 
+    border: 1px solid black;
+    top: 200px;
+    width: 100%;
+    height: 100%;
+}
+
+#hero article h1 {
+    border: 1px solid white;
+    font-size: 1.2em;
+}
+
+.hiddenText {
+    visibility: visible;
+    overflow: hidden;
+    text-align: justify;
+    width: 100%;
+    height: fit-content;
+    opacity: 1;
+    padding: 0px 50px;
+    line-height: 1.5em;
+}
+
+.hiddenText p {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.hiddenText a {
+    text-decoration: underline;
+}
+
+#project1Title, #project2Title {
+    overflow: hidden;
+    white-space: nowrap;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 10px
+}
+
+#minimiserCont, #minimiserCont2 {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.minButton {
+    position: relative;
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+    font-size: 1em;
+}
+
+#analytics {
+    display: none;
+}
+@keyframes textTransition {
+    0% {
+    color: black; 
+    background-color: blanchedalmond;
+    }
+    100% {
+    color: goldenrod;
+    background-color: white;
+}
+}
+
+@keyframes textTransition2 {
+    0% {
+    color: black; 
+    background-color: whitesmoke;
+    }
+    100% {
+    color: white;
+    background-color: salmon;
+}
+}
+
+@media only screen and (max-height: 500px){
+    .cloud{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+   #root{
+    -webkit-overflow-scrolling: touch;  
+   }
+   
+    #hiBitmoji img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .cloud {
+        z-index: -10;
+        position: absolute;
+        width: 150px;
+        height: 75px;
+        border-radius: 100px;
+        box-shadow: 5px 5px rgba(0,0,0,0.25);
+        background-color: white;
+    }
+        
+    .cloud::after {
+        width: 60px;
+        height: 60px;
+        left: -50px;
+        top: -40px;
+    }
+    
+    .cloud::before{
+        width: 80px;
+        height: 80px;
+        left: 55px;
+        top: -30px;
+    }
+    
+    #cloud1{
+        left: 650px;
+        top: 50px;
+    }
+    #cloud2 {
+        left: 50px;
+        top: 110px;
+    }
+
+    #cloud3{
+        left: 900px;
+        top: 80px;
+    }
+    #titleContainer { 
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+    #strapline {
+        position: absolute;
+        top: 170px;
+    }
+    
+    #titleContainer h1{ 
+        border: 1px solid black;
+        background-color: salmon;
+        width: 500px;
+        box-shadow: 5px 5px black;
+        font-size: 4em;
+        padding: 0px 0px;
+    }
+    
+    #jobTitle{
+        display: inline-block;
+        width: 130px; 
+        margin-left: 10px;
+        text-align: left;
+        color: white;
+    }
+    
+    #IamA {
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .hiddenText {
+            visibility: visible;
+            overflow: hidden;
+            text-align: justify;
+            width: 100%;
+            height: fit-content;
+            opacity: 1;
+            padding: 0px 50px;
+            line-height: 1.5em;
+            font-size: 0.6em;
+    }
+    #project1Title, #project2Title {
+       font-size: 0.8em;
+    }
+    #minimiserCont, #minimiserCont2 {
+        margin: 30px auto;
+    }
+}
