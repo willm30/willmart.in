@@ -192,16 +192,6 @@ const listItemAnimation = (projectID) => {
     }
 
     if (window.innerWidth > mobileDimension){
-        minimiser.addEventListener("mousedown", e => {
-            minimiser.style.boxShadow = "0px 0px"
-            minimiser.style.transform = "translate(2px, 2px)"
-        })
-        
-        window.addEventListener("mouseup", e => {
-            minimiser.style.boxShadow = "2px 2px black"
-            minimiser.style.transform = ""
-        
-        })
         if (stateObject.expanded != true){
             expander()
             listItem.onclick = ""
@@ -232,9 +222,26 @@ const listItemAnimation = (projectID) => {
             } 
         }
     }
-        
+    const buttonPress = () => {
+        minimiser.style.boxShadow = "0px 0px"
+        minimiser.style.transform = "translate(2px, 2px)"
+    }
+    const buttonRelease = () => {
+        minimiser.style.boxShadow = "2px 2px black"
+        minimiser.style.transform = ""
+    }
+    
+    minimiser.addEventListener("mousedown", buttonPress)
+    window.addEventListener("mouseup", buttonRelease)  
     window.addEventListener("resize", resizeEvent)
+
+    if (touchDevice.touch){
+        minimiser.removeEventListener("mousedown", buttonPress)
+        window.removeEventListener("mouseup", buttonRelease)
+    }
 }
+
+
 
 const touchState = () => {
     touchDevice.touch = true
