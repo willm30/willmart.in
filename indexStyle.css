@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
 
 * {
     box-sizing: border-box;
@@ -20,15 +21,20 @@ a {
     color: inherit;
 }
 
-#hiBitmoji {
-    position: fixed;
-    bottom: -5px;
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8em;
 }
 
-#hiBitmoji img {
-    width: 120%;
-    height: 120%;
-    
+#hiBitmoji {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background-image: url(hiBitmoji\ flipped.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 478px;
+    height: 478px;
 }
 
 .cloud {
@@ -76,6 +82,7 @@ a {
     top: 225px;
     transform: scaleX(-1)
 }
+
 #root {
     position: fixed;
     display: flex;
@@ -85,43 +92,6 @@ a {
     overflow-x: hidden; 
 }
 
-#navbar {
-    display: none;
-    z-index: 9;
-    order: 1;
-    width: 15%;
-}
-
-
-#navbar ul {
-    width: 100%;
-    height: 100%;
-}
-
-.navItem {
-    margin: 40px 0px;
-    width: 100%;
-    padding: 0px 20px;
-    border: 1px solid black;
-    background-color: blanchedalmond;
-    box-shadow: -5px 5px black;
-    font-size: 3vw;
-    min-width: 250px;
-}
-
-.navItem:hover, #viewCompleted:hover{
-    animation-name: textTransition;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-
-#hero {
-    order: 0;
-    width: 85%;
-    height: 100%;
-
-}
 #titleContainer { 
     position: absolute;
     top: 200px;
@@ -154,14 +124,14 @@ a {
     text-shadow: 1px 1px white;
 }
 
-#strapline {
+section {
     position: absolute;
     top: 400px;
     width: 100%;
     color: black;
 }
 
-#strapline h2 {
+section h2 {
     background-color:salmon;
     text-align: center;
     border: 1px solid black;
@@ -174,7 +144,7 @@ a {
     text-shadow: 1px 1px black;
 }
 
-#strapline h3 {
+section h3 {
     display: none;
     background-color: blanchedalmond;
     text-align: center;
@@ -186,7 +156,7 @@ a {
     padding: 5px;
 }
 
-#strapline ul {
+section ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,7 +166,7 @@ a {
     width: 80%
 }
 
-#strapline li {
+section li {
     border: 1px solid black;
     width: 352.95px;
     height: 90px;
@@ -248,7 +218,7 @@ a {
     text-decoration: underline;
 }
 
-#project1Title, #project2Title {
+.liTitle{
     overflow: hidden;
     white-space: nowrap;
     width: fit-content;
@@ -256,7 +226,7 @@ a {
     padding: 10px
 }
 
-#minimiserCont, #minimiserCont2 {
+.minimiserCont {
     width: 100%;
     text-align: center;
     margin: 50px auto;
@@ -269,6 +239,7 @@ a {
     border: 1px solid black;
     box-shadow: 2px 2px black;
     font-size: 1em;
+    margin: auto
 }
 
 #analytics {
@@ -307,11 +278,10 @@ a {
     -webkit-overflow-scrolling: touch;  
    }
    
-    #hiBitmoji img {
-        width: 100%;
-        height: 100%;
+   #hiBitmoji {
+    width: calc(478px / 1.2);
+    height: calc(478px / 1.2);
     }
-    
     .cloud {
         z-index: -10;
         position: absolute;
@@ -354,11 +324,7 @@ a {
         top: 50px;
         width: 100%;
     }
-    #strapline {
-        position: absolute;
-        top: 170px;
-    }
-    
+
     #titleContainer h1{ 
         border: 1px solid black;
         background-color: salmon;
@@ -380,6 +346,12 @@ a {
         margin-right: 10px;
         margin-left: 20px;
     }
+
+    section {
+        position: absolute;
+        top: 170px;
+    }
+
     .hiddenText {
             visibility: visible;
             overflow: hidden;
