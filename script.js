@@ -21,7 +21,7 @@ const animationTime = 50
 const targetWidthPercent = 80;
 const mobileDimension = 1150;
 const rootDiv = document.getElementById("root")
-const titlesArray = ["How I Designed and Coded My Personal Website—From Scratch", "How I Became Fluent In Spanish in 2 Years", "Wank Fucker"]
+const titlesArray = ["How I Designed and Coded My Personal Website—From Scratch", "How I Became Fluent In Spanish in 2 Years"]
 
 const listItemAnimation = (projectID) => {
     const listItem = document.getElementById(projectID)
