@@ -22,6 +22,41 @@ const targetWidthPercent = 80;
 const mobileDimension = 1150;
 const rootDiv = document.getElementById("root")
 const titlesArray = ["How I Designed and Coded My Personal Website—From Scratch", "How I Became Fluent In Spanish in 2 Years"]
+const stylesObject = {
+    rootDiv: {
+        overflowY: "auto"
+    },
+    listItem: {
+        width: "80%",
+        mobile: {
+            width: "100%",
+            height: "auto"
+        }
+    },
+    title: {
+        border: "1px solid black",
+        fontSize: "1.4em",
+        fontFamily: "'Oswald', sans-serif",
+        boxShadow: "3px 3px black",
+        margin: "50px auto",
+        width:"80%",
+        mobile: {
+            fontSize: "0.9em",
+            whiteSpace: "normal",
+            margin: "25px auto"
+        }
+    },
+    paraContainer: {
+        visibility: "visible"
+    },
+    minimiser: {
+        mobile: {
+            margin: "25px auto"
+        }
+    }
+
+}
+
 
 const listItemAnimation = (projectID) => {
     const listItem = document.getElementById(projectID)
@@ -42,6 +77,7 @@ const listItemAnimation = (projectID) => {
     let originalWidth;
     let originalHeight;
     let timeRemaining = animationTime
+    let animationInt;
 
     const titleGetter = () => {
         let numberRegex = /\d+/
@@ -76,14 +112,15 @@ const listItemAnimation = (projectID) => {
     const expander = () => {
         getDimensions("width")
         getDimensions("height")
-        rootDiv.style.overflowY = "auto"
-        title.style.border = "1px solid black"
-        title.style.boxShadow = "3px 3px black"
-        title.style.margin = "50px auto"
+        rootDiv.style.overflowY = stylesObject.rootDiv.overflowY
+        title.style.border = stylesObject.title.border
+        title.style.boxShadow = stylesObject.title.boxShadow
+        title.style.margin = stylesObject.title.margin
+        title.style.fontFamily = stylesObject.title.fontFamily
         title.innerText = titleGetter()
-        title.style.width = "80%"
-        title.style.fontSize = "1.1em"
-        paraContainer.style.visibility = "visible"
+        title.style.width = stylesObject.title.width
+        title.style.fontSize = stylesObject.title.fontSize
+        paraContainer.style.visibility = stylesObject.paraContainer.visibility
         originalWidth = widthCurrent
         originalHeight = heightCurrent
     const animator = () => {
@@ -111,7 +148,16 @@ const listItemAnimation = (projectID) => {
         }
         }
     listItem.classList.remove("preclick")
-    const animationInt = setInterval(animator, 10)
+
+    if (window.innerWidth > mobileDimension){
+            animationInt = setInterval(animator, 10)
+            listItem.onclick = ""
+            minimiser.onclick = collapser
+    } else {
+            expandedMobileStyles()
+            listItem.onclick = ""
+            minimiser.onclick = collapsedMobileStyles
+    }
     }
     const collapser = () => {
         paraContainer.style.visibility = "hidden"
@@ -119,6 +165,7 @@ const listItemAnimation = (projectID) => {
         title.style.boxShadow = ""
         title.style.margin= ""
         title.style.fontSize = ""
+        title.style.fontFamily = ""
         title.style.whiteSpace = ""
         title.innerText = collapsedTitle
         title.style.width = ""
@@ -154,14 +201,12 @@ const listItemAnimation = (projectID) => {
         getDimensions("height")
         originalWidth = widthCurrent
         originalHeight = heightCurrent
-        listItem.style.width = "100%"
-        listItem.style.height = "auto"
-        title.style.border = "1px solid black"
-        title.style.boxShadow = "black 3px 3px"
-        title.style.width = "80%"
-        title.style.fontSize = "0.9em"
-        title.style.whiteSpace = "normal"
-        paraContainer.style.visibility = "visible"
+        listItem.style.width = stylesObject.listItem.mobile.width
+        listItem.style.height = stylesObject.listItem.mobile.height
+        title.style.fontSize = stylesObject.title.mobile.fontSize
+        title.style.whiteSpace = stylesObject.title.mobile.whiteSpace
+        title.style.margin = stylesObject.title.mobile.margin
+        minimiser.style.margin = stylesObject.minimiser.mobile.margin
         listItem.classList.remove("preclick")
         title.innerText = titleGetter()
         stateObject.heightMax = true
@@ -175,10 +220,12 @@ const listItemAnimation = (projectID) => {
         title.style.boxShadow = ""
         title.style.width = ""
         title.style.fontSize = ""
+        title.style.fontFamily = ""
         title.style.whiteSpace = ""
         title.style.margin = ""
         title.innerText = collapsedTitle
         paraContainer.style.visibility = "hidden"
+        minimiser.style.margin = ""
         stateObject.heightMax = false
         stateObject.widthMax = false
         stateObject.expanded = false
@@ -191,34 +238,27 @@ const listItemAnimation = (projectID) => {
         setTimeout(onClickSetter, animationTime)
     }
 
-    if (window.innerWidth > mobileDimension){
-        if (stateObject.expanded != true){
+    if (stateObject.expanded != true){
             expander()
-            listItem.onclick = ""
-            minimiser.onclick = collapser
         } 
-        } else {
-            if (stateObject.expanded != true){
-                expandedMobileStyles()
-                listItem.onclick = ""
-                minimiser.onclick = collapsedMobileStyles
-            } 
-        }
+
     const resizeEvent = () => {
         minimiser.onclick = ""
         if (window.innerWidth < mobileDimension){
             if (stateObject.expanded){
                 minimiser.onclick = collapsedMobileStyles
-                listItem.style.width="100%"
-                title.style.fontSize =  "0.9em";
-                title.style.margin = ""
+                listItem.style.width= stylesObject.listItem.mobile.width
+                title.style.fontSize =  stylesObject.title.mobile.fontSize
+                title.style.margin = stylesObject.title.mobile.margin
+                minimiser.style.margin = stylesObject.minimiser.mobile.margin
             } 
         } else {
             if (stateObject.expanded){
                 minimiser.onclick = collapser
-                listItem.style.width = "80%" 
-                title.style.margin = "50px auto"
-                title.style.fontSize =  "1.1em"; 
+                listItem.style.width = stylesObject.listItem.width;
+                title.style.margin = stylesObject.title.margin;
+                title.style.fontSize =  stylesObject.title.fontSize; 
+                minimiser.style.margin = ""
             } 
         }
     }

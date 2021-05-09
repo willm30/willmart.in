@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 * {
     box-sizing: border-box;
@@ -23,7 +24,7 @@ a {
 
 code {
     font-family: 'Source Code Pro', monospace;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 #hiBitmoji {
@@ -183,19 +184,6 @@ section li {
     cursor: pointer;
 }
 
-#hero article {
-    position: absolute; 
-    border: 1px solid black;
-    top: 200px;
-    width: 100%;
-    height: 100%;
-}
-
-#hero article h1 {
-    border: 1px solid white;
-    font-size: 1.2em;
-}
-
 .hiddenText {
     visibility: visible;
     overflow: hidden;
@@ -214,6 +202,10 @@ section li {
     
 }
 
+.hiddenText p::first-letter{
+    font-size: 1.75em;
+}
+
 .hiddenText a {
     text-decoration: underline;
 }
@@ -223,13 +215,12 @@ section li {
     white-space: nowrap;
     width: fit-content;
     margin: 15px auto;
-    padding: 10px
+    padding: 10px;
 }
 
 .minimiserCont {
     width: 100%;
     text-align: center;
-    margin: 50px auto;
 }
 
 .minButton {
@@ -239,7 +230,7 @@ section li {
     border: 1px solid black;
     box-shadow: 2px 2px black;
     font-size: 1em;
-    margin: auto
+    margin: 50px auto;
 }
 
 #analytics {
